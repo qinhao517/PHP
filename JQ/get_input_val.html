@@ -1,0 +1,34 @@
+<?php
+<!--获取表格中多行tr中的某一行的特定val值，采用this方法-->
+<div class="main-div">
+    h+="<tr class='remo'>" +
+    "<td align='center' style='width:10%;height:22px'><input class='goods_attr_id' name='goods_attr_id[]' type='hidden' value="+data[i].goods_attr_id+" />"+data[i].attr_value+"</td>" +
+    "<td align='center'><input class='goods_number' name='goods_number[]' onblur='judge_stock(this,"+product_id+")' type='text' id='goods_number' value="+data[i].goods_number+" /></td>" +
+    "<td align='center'><input class='base_price' name='base_price[]' type='text' id='base_price' value="+data[i].base_goods_price+" /></td>" +
+    "<td align='center'><input class='attr_priceed' name='attr_price[]' type='text' id='attr_price' value="+data[i].attr_price+"  /></td>" +
+    "<input class='goods_id_info' name='goods_id_info[]' type='hidden' value="+goods_id+" /><tr>";
+</div>
+
+<script>
+    function judge_stock(obj,product_id) {
+
+//        alert(product_id);
+        var goods_number = $("#goods_number").val();
+        var tr=obj.value;
+        console.log(tr);
+//        $.ajax({
+//            type: "post",
+//            url: "favourable.php?act=judge_stock",
+//            data:{
+//                product_id:product_id,
+//            },
+//            dataType: "json",
+//            success: function(data){
+////                console.log(data);
+//                if(data < 1){
+//                    alert('活动库存不能大于商品的规格库存！');
+//                }
+//            }
+//        });
+    }
+</script>
